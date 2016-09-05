@@ -63,33 +63,33 @@ namespace Loops
             // If the user guesses the number, display “You won"; otherwise, display “You lost". (To make sure the program is behaving correctly,
             // you can display the secret number on the console first.)
 
-            var random = new Random();
-            var chances = 1;
-            var num = random.Next(1, 10);
-            //Console.WriteLine(num);
-            while (chances < 5)
-            {
-                Console.WriteLine("Guess the random number, you have 4 chances");
-                var guess = Convert.ToInt32(Console.ReadLine());
-                if (guess == num)
-                {
-                    Console.WriteLine("You win");
-                    break;
-                }
-
-                else
-                {
-                    if (chances == 4)
-                    {
-                        Console.WriteLine("You Lose");
-                        break;
-                    }
-                    Console.WriteLine("Wrong... Guess again");
-                    chances++;
-                }
-
-
-            }
+            //            var random = new Random();
+            //            var chances = 1;
+            //            var num = random.Next(1, 10);
+            //            //Console.WriteLine(num);
+            //            while (chances < 5)
+            //            {
+            //                Console.WriteLine("Guess the random number, you have 4 chances");
+            //                var guess = Convert.ToInt32(Console.ReadLine());
+            //                if (guess == num)
+            //                {
+            //                    Console.WriteLine("You win");
+            //                    break;
+            //                }
+            //
+            //                else
+            //                {
+            //                    if (chances == 4)
+            //                    {
+            //                        Console.WriteLine("You Lose");
+            //                        break;
+            //                    }
+            //                    Console.WriteLine("Wrong... Guess again");
+            //                    chances++;
+            //                }
+            //
+            //
+            //            }
 
 
             #endregion
@@ -98,6 +98,23 @@ namespace Loops
 
             // Write a program and ask the user to enter a series of numbers separated by comma. Find the maximum of the numbers and display it on the console.
             // For example, if the user enters “5, 3, 8, 1, 4", the program should display 8.
+
+            Console.Write("Enter comma separated numbers: ");
+            var input = Console.ReadLine();
+
+            var numbers = input.Split(',');
+
+            // Assume the first number is the max 
+            var max = Convert.ToInt32(numbers[0]);
+
+            foreach (var str in numbers)
+            {
+                var number = Convert.ToInt32(str);
+                if (number > max)
+                    max = number;
+            }
+
+            Console.WriteLine("Max is " + max);
 
 
             #endregion
