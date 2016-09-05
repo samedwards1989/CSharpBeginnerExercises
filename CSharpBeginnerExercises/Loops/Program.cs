@@ -9,18 +9,18 @@ namespace Loops
             #region Exercise 1
             // Write a program to count how many numbers between 1 and 100 are divisible by 3 with no remainder. Display the count on the console.
 
-            var isDivisable = 0;
-            var minValue = 1;
-            var maxValue = 100;
-            while (minValue <= maxValue)
-            {
-                if (minValue % 3 == 0)
-                {
-                    isDivisable++;
-                }
-                minValue++;
-            }
-            Console.WriteLine(isDivisable);
+            //            var isDivisable = 0;
+            //            var minValue = 1;
+            //            var maxValue = 100;
+            //            while (minValue <= maxValue)
+            //            {
+            //                if (minValue % 3 == 0)
+            //                {
+            //                    isDivisable++;
+            //                }
+            //                minValue++;
+            //            }
+            //            Console.WriteLine(isDivisable);
             #endregion
 
             #region Exercise 2
@@ -28,6 +28,24 @@ namespace Loops
             // Write a program and continuously ask the user to enter a number or "ok" to exit.
             // Calculate the sum of all the previously entered numbers and display it on the console.
 
+            var i = 0;
+            var sum = 0;
+            while (i == i)
+            {
+                Console.WriteLine("Enter a number or press 'ok' to exit");
+                var input = Console.ReadLine();
+                if (input.ToLower() != "ok")
+                {
+                    var number = Convert.ToInt32(input);
+                    sum = sum + number;
+                }
+                else if (input.ToLower() == "ok")
+                {
+                    break;
+                }
+                i++;
+            }
+            Console.WriteLine($"Sum of all numbers: {sum}");
 
             #endregion
 
