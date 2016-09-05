@@ -28,24 +28,24 @@ namespace Loops
             // Write a program and continuously ask the user to enter a number or "ok" to exit.
             // Calculate the sum of all the previously entered numbers and display it on the console.
 
-            var i = 0;
-            var sum = 0;
-            while (i == i)
-            {
-                Console.WriteLine("Enter a number or press 'ok' to exit");
-                var input = Console.ReadLine();
-                if (input.ToLower() != "ok")
-                {
-                    var number = Convert.ToInt32(input);
-                    sum = sum + number;
-                }
-                else if (input.ToLower() == "ok")
-                {
-                    break;
-                }
-                i++;
-            }
-            Console.WriteLine($"Sum of all numbers: {sum}");
+            //            var i = 0;
+            //            var sum = 0;
+            //            while (i == i)
+            //            {
+            //                Console.WriteLine("Enter a number or press 'ok' to exit");
+            //                var input = Console.ReadLine();
+            //                if (input.ToLower() != "ok")
+            //                {
+            //                    var number = Convert.ToInt32(input);
+            //                    sum = sum + number;
+            //                }
+            //                else if (input.ToLower() == "ok")
+            //                {
+            //                    break;
+            //                }
+            //                i++;
+            //            }
+            //            Console.WriteLine($"Sum of all numbers: {sum}");
 
             #endregion
 
@@ -62,6 +62,34 @@ namespace Loops
             // Write a program that picks a random number between 1 and 10. Give the user 4 chances to guess the number.
             // If the user guesses the number, display “You won"; otherwise, display “You lost". (To make sure the program is behaving correctly,
             // you can display the secret number on the console first.)
+
+            var random = new Random();
+            var chances = 1;
+            var num = random.Next(1, 10);
+            //Console.WriteLine(num);
+            while (chances < 5)
+            {
+                Console.WriteLine("Guess the random number, you have 4 chances");
+                var guess = Convert.ToInt32(Console.ReadLine());
+                if (guess == num)
+                {
+                    Console.WriteLine("You win");
+                    break;
+                }
+
+                else
+                {
+                    if (chances == 4)
+                    {
+                        Console.WriteLine("You Lose");
+                        break;
+                    }
+                    Console.WriteLine("Wrong... Guess again");
+                    chances++;
+                }
+
+
+            }
 
 
             #endregion
