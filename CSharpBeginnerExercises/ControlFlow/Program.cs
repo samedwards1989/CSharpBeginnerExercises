@@ -82,6 +82,7 @@ namespace ControlFlow
 
             #endregion
 
+            #region Exercise 4
 
             // Exercise 4
             // Your job is to write a program for a speed camera. For simplicity, ignore the details such as camera, sensors,
@@ -113,6 +114,8 @@ namespace ControlFlow
             {
                 Console.WriteLine(e);
             }
+
+            #endregion
 
         }
     }
